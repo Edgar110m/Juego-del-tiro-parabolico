@@ -48,17 +48,17 @@ def draw():
     update()
 
 
-def move():
+def move():#Movimiento debera ser mayor a 0
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
-    for target in targets:
+    for target in targets:#Asigana velocidad a todos los objetivos
         target.x -= 0.75
 
-    if inside(ball):
+    if inside(ball):#asigna la velocidad del proyectil
         speed.y -= 0.55
         ball.move(speed)
 
@@ -82,4 +82,4 @@ up()
 tracer(False)
 onscreenclick(tap)
 move()
-done()
+done()1
