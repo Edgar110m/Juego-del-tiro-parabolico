@@ -33,7 +33,7 @@ def inside(xy):
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 
-def draw():
+def draw(): #se dibuja el balón inicial y los objetivos de este
     "Draw ball and targets."
     clear()
 
