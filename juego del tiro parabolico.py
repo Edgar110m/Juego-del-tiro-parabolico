@@ -19,7 +19,7 @@ speed = vector(0, 0)
 targets = []
 
 
-def tap(x, y):
+def tap(x, y): #Mediante un if revisa si el proyectil no se encuentra en la pantalla para que calcule la trayectoria 
     "Respond to screen tap."
     if not inside(ball):
         ball.x = -199
@@ -28,12 +28,12 @@ def tap(x, y):
         speed.y = (y + 200) / 25
 
 
-def inside(xy):
+def inside(xy): #Revisa que el parametro dado este entre los limites de la ventana
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 
-def draw():
+def draw(): #Se dibuja el balón inicial y los objetivos de este
     "Draw ball and targets."
     clear()
 
@@ -48,17 +48,17 @@ def draw():
     update()
 
 
-def move():
+def move():#Movimiento debera ser mayor a 0
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
-    for target in targets:
+    for target in targets:#Asigana velocidad a todos los objetivos
         target.x -= 0.75
 
-    if inside(ball):
+    if inside(ball):#Asigna la velocidad del proyectil
         speed.y -= 0.55
         ball.move(speed)
 
@@ -82,4 +82,4 @@ up()
 tracer(False)
 onscreenclick(tap)
 move()
-done()
+done()1
